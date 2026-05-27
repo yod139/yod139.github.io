@@ -1,0 +1,94 @@
+/* =========================
+   ACCESS タイトル
+========================= */
+
+.access-title-box{
+    position:relative;
+    margin-bottom:60px;
+    overflow:hidden;
+}
+
+.access-title{
+    font-size:32px;
+    font-weight:600;
+    color:#4C4B4B;
+    position:relative;
+    z-index:2;
+}
+
+.access-ticker{
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    overflow:hidden;
+    white-space:nowrap;
+    transform:translateY(-50%);
+    z-index:1;
+}
+
+.access-ticker span{
+    display:inline-block;
+    letter-spacing:.2em;
+    font-size:48px;
+    font-weight:700;
+    color:rgba(74,74,74,.1);
+    animation:ticker-scroll 15s linear infinite;
+}
+
+/* =========================
+   ACCESS 本文
+========================= */
+
+.access-section{
+    width:100%;
+    max-width:1200px;
+    margin:120px auto;
+    padding:0 20px;
+}
+
+.access-content{
+    display:flex;
+    gap:50px;
+}
+
+.access-map{
+    width:60%;
+}
+
+.access-map iframe{
+    width:100%;
+    height:500px;
+    border:0;
+}
+
+.access-info{
+    width:40%;
+}
+
+.access-item{
+    margin-bottom:35px;
+}
+
+.access-item h3{
+    margin-bottom:10px;
+    color:#0ABAB5;
+    font-size:20px;
+}
+
+.access-item p{
+    line-height:1.8;
+}
+
+@media(max-width:768px){
+
+.access-content{
+    flex-direction:column;
+}
+
+.access-map,
+.access-info{
+    width:100%;
+}
+
+}

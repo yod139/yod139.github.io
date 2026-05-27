@@ -1,0 +1,181 @@
+/* news-detail.css */
+/* 理由：ニュース詳細ページ専用の余白と画像サイズ調整のみ。 */
+/* 共通デザインは common.css に任せ、ここではページ固有部分のみ扱う。 */
+
+.news-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.news-detail-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.news-date {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.news-heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.news-detail-body p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-btn a {
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* ============================
+   NEWS詳細：イベント情報テーブル
+============================ */
+
+.detail-table {
+    width: 100%;
+    margin: 40px 0;
+    border-top: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.detail-table dt {
+    font-weight: 600;
+    padding: 14px 0;
+    color: #30416B;
+    border-bottom: 1px solid #eee;
+    width: 160px;
+}
+
+.detail-table dd {
+    padding: 14px 0;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    line-height: 1.6;
+}
+
+/* dt と dd を横並び（シンプルで見やすい） */
+.detail-table {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    column-gap: 20px;
+}
+
+/* 複数行の dd が続く場合も自動で揃う */
+.detail-table dd + dd {
+    margin-top: -14px; /* 過剰な隙間を消す */
+    padding-top: 0;
+}
+
+/* ============================
+   NEWS詳細：日程テーブル
+============================ */
+
+.detail-subtitle {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 50px 0 20px;
+    color: #30416B;
+}
+
+.schedule-box {
+    margin-bottom: 40px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border-bottom: 1px solid #eee;
+    padding: 14px 10px;
+}
+
+.schedule-table th {
+    background: #F5F5F5;
+    font-weight: 600;
+    color: #30416B;
+}
+
+.schedule-table td {
+    color: #4C4B4B;
+}
+
+/* 時間割部分 */
+.time-select {
+    background: #FAFAFA;
+    padding: 20px 25px;
+    border-left: 4px solid #0ABAB5;
+    border-radius: 4px;
+}
+
+.time-select .time-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #30416B;
+}
+
+.time-select ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.time-select li {
+    margin-bottom: 4px;
+}
+
+.time-note {
+    font-size: 14px;
+    color: #666;
+}
+
+/* SP対応 */
+@media screen and (max-width: 768px) {
+    .schedule-table th, .schedule-table td {
+        padding: 12px 6px;
+        font-size: 14px;
+    }
+}
+
+/* ============================
+   申込みボタン（Googleフォーム）
+============================ */
+
+.entry-button-wrap {
+    text-align: center;
+    margin: 40px 0 60px;
+}
+
+.entry-button {
+    display: inline-block;
+    background-color: #0ABAB5;
+    color: #fff;
+    padding: 14px 40px;
+    font-size: 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.entry-button:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}

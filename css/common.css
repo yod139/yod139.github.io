@@ -1,0 +1,34 @@
+/* =========================
+   共通カラー
+========================= */
+:root {
+    --main-color: #4C4B4B;
+    --accent-color: #0ABAB5;
+    --bg-light: #F7F7F7;
+}
+
+/* =========================
+   全ページ共通ベース
+========================= */
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    color: var(--main-color);
+    background: #ffffff;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+    transition: .3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* section 共通余白 */
+section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+}

@@ -1,0 +1,106 @@
+/* =========================
+   SCHOOL タイトル（NEWSと完全統一）
+========================= */
+.school-title-box {
+  position: relative;
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+
+.school-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #4C4B4B;
+  position: relative;
+  z-index: 2;
+}
+
+/* SCHOOL ティッカー（見出しに被さる） */
+.school-ticker {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.school-ticker span {
+  display: inline-block;
+  letter-spacing: 0.2em;
+  font-size: 48px;
+  font-weight: 700;
+  color: rgba(74, 74, 74, 0.1);
+  animation: ticker-scroll 23s linear infinite;
+}
+
+.school-ticker span:last-child {
+  animation-delay: -9s;
+}
+
+/* ===========================
+   SCHOOL（学習メソッド）
+=========================== */
+
+.school-section .school-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.school-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.school-thumb {
+  flex-shrink: 0;
+  width: 200px;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.school-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.school-content {
+  flex: 1;
+}
+
+.school-heading {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #0ABAB5;
+}
+
+.school-text {
+  font-size: 16px;
+  color: #4C4B4B;
+  line-height: 1.6;
+}
+
+/* =========================
+   SCHOOL 学習メソッド枠
+========================= */
+.school-method-box {
+  max-width: 900px;
+  padding: 40px 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 60px;
+  background: #fff;
+}
+
+/* 各メソッドの間隔 */
+.school-method + .school-method {
+  margin-top: 28px;
+}
