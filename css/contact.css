@@ -1,0 +1,120 @@
+/* =========================
+   CONTACT タイトル
+========================= */
+
+.contact-title-box{
+    position:relative;
+    margin-bottom:60px;
+    overflow:hidden;
+}
+
+.contact-title{
+    font-size:32px;
+    font-weight:600;
+    color:#4C4B4B;
+    position:relative;
+    z-index:2;
+}
+
+.contact-ticker{
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    overflow:hidden;
+    white-space:nowrap;
+    transform:translateY(-50%);
+    z-index:1;
+}
+
+.contact-ticker span{
+    display:inline-block;
+    letter-spacing:.2em;
+    font-size:48px;
+    font-weight:700;
+    color:rgba(74,74,74,.1);
+    animation:ticker-scroll 15s linear infinite;
+}
+
+/* =========================
+   CONTACT 本文
+========================= */
+
+.contact-content{
+    max-width:1000px;
+    margin:auto;
+}
+
+.contact-item{
+    border-bottom:1px solid #ddd;
+    padding:25px 0;
+}
+
+.contact-heading{
+    font-size:20px;
+    margin-bottom:10px;
+    color:#0ABAB5;
+}
+
+.contact-text{
+    font-size:16px;
+    line-height:1.8;
+    color:#4C4B4B;
+}
+
+.contact-btn{
+    margin-top:50px;
+}
+
+.contact-btn a{
+    display:inline-block;
+    padding:16px 35px;
+    border:none;
+    color:#30416B;
+    transition:.3s;
+}
+
+.contact-btn a:hover{
+    transform:translateY(-5px);
+}
+
+/* =========================
+   ボタン
+========================= */
+
+.contact-btn-wrap{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-top:10px;
+}
+
+@media screen and (max-width:768px){
+
+.contact-btn-wrap{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+}
+.contact-link-btn{
+    display:inline-block;
+    padding:14px 30px;
+    margin-top:10px;
+
+    border:1px solid #0ABAB5;
+    border-radius:50px;
+
+    color:#4C4B4B;
+    font-weight:600;
+
+    transition:.3s;
+    text-decoration:none;
+}
+
+.contact-link-btn:hover{
+    transform:translateY(-5px);
+
+    background:#0ABAB5;
+    color:#fff;
+}

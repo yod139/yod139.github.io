@@ -1,0 +1,59 @@
+/* =========================
+   COURSE タイトル
+========================= */
+.course-title-box {
+    position: relative;
+    margin-bottom: 60px;
+    overflow: hidden;
+}
+
+.course-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #4C4B4B;
+    position: relative;
+    z-index: 2;
+}
+
+.course-ticker {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.course-ticker span {
+    display: inline-block;
+    letter-spacing: 0.2em;
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(74, 74, 74, 0.1);
+    animation: ticker-scroll 15s linear infinite;
+}
+
+/* =========================
+   COURSE 本文
+========================= */
+.course-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.course-block {
+  margin-bottom: 60px;
+}
+
+.course-heading {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #0ABAB5;
+}
+
+.course-text {
+  line-height: 1.8;
+  font-size: 16px;
+}
