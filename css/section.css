@@ -2,33 +2,137 @@
    Section 共通スタイル
 ========================== */
 
-section {
-  padding: 80px 20px;
+/* 各セクションの外枠
+   背景は画面いっぱい、中身は最大 1120px で中央寄せ */
+.news-section,
+.school-section,
+.instructor-section,
+.course-section,
+.contact-section,
+.access-section {
+  position: relative;
+  width: 100%;
+  padding: 104px max(24px, calc((100% - var(--content-w)) / 2));
+  overflow-x: clip;
 }
 
-.section-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+/* 背景色の交互配置 */
+.school-section,
+.course-section {
+  background: var(--bg-light);
 }
 
-/* セクション見出し */
-.section-title {
-  font-size: 32px;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 40px;
+@media (max-width: 768px) {
+  .news-section,
+  .school-section,
+  .instructor-section,
+  .course-section,
+  .contact-section,
+  .access-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 }
 
-/* ACCESS セクション */
-.access {
-  background: #f5f5f5;
+/* ==========================
+   セクション見出し（全セクション共通）
+   大きな英字ティッカーの上に日本語タイトルを重ねる
+========================== */
+.news-title-box,
+.school-title-box,
+.instructor-title-box,
+.course-title-box,
+.contact-title-box,
+.access-title-box {
+  position: relative;
+  padding-top: clamp(40px, 5.6vw, 72px);
+  margin-bottom: 64px;
 }
 
+.news-title,
+.school-title,
+.instructor-title,
+.course-title,
+.contact-title,
+.access-title {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  color: var(--main-color);
+}
+
+/* 見出し下のアクセントライン */
+.news-title::after,
+.school-title::after,
+.instructor-title::after,
+.course-title::after,
+.contact-title::after,
+.access-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 18px;
+  border-radius: 2px;
+  background: var(--accent-color);
+}
+
+/* 背景で流れる英字（画面幅いっぱい） */
+.news-ticker,
+.school-ticker,
+.instructor-ticker,
+.course-ticker,
+.contact-ticker,
+.access-ticker {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.news-ticker span,
+.school-ticker span,
+.instructor-ticker span,
+.course-ticker span,
+.contact-ticker span,
+.access-ticker span {
+  flex-shrink: 0;
+  font-family: var(--font-en);
+  font-size: clamp(60px, 9vw, 120px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: rgba(76, 75, 75, 0.06);
+  animation: ticker-scroll 40s linear infinite;
+}
+
+/* 2つの span を同じ距離だけ動かして途切れずループ */
 @keyframes ticker-scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .news-ticker span,
+  .school-ticker span,
+  .instructor-ticker span,
+  .course-ticker span,
+  .contact-ticker span,
+  .access-ticker span {
+    animation: none;
   }
 }
