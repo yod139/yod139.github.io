@@ -1,103 +1,139 @@
-.instructor {
-  padding: 80px 20px;
-}
-
-.instructor-item {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  background: #cfd8e3;
-  padding: 60px;
-  margin-bottom: 80px;
-  position: relative;
-}
-
-.instructor-image {
-  position: relative;
-  width: 220px;
-}
-
-.instructor-image img {
-  width: 100%;
-  display: block;
-  position: relative;
-  z-index: 2;
-}
-
-.image-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #8ea3bf;
-  top: -20px;
-  left: -20px;
-  z-index: 1;
-}
-
-.instructor-text h3 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.role {
-  font-size: 16px;
-  margin-right: 20px;
-}
-
-.instructor-text p {
-  line-height: 1.8;
+/* =========================
+   INSTRUCTOR タイトル
+   （見出し・ティッカーは section.css で共通化）
+========================= */
+.instructor-ticker span {
+  animation-duration: 60s;
 }
 
 /* =========================
-   INSTRUCTOR タイトル
+   INSTRUCTOR 本文
 ========================= */
-.instructor-title-box {
+.instructor-item {
   position: relative;
-  margin-bottom: 60px;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-items: center;
+  gap: 72px;
+  padding: 64px 72px;
+  margin-bottom: 48px;
+  background: #cfd8e3;
+  border-radius: var(--radius);
 }
 
-.instructor-title {
-  font-size: 32px;
-  font-weight: 600;
-  color: #4C4B4B;
+.instructor-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 2人目は左右反転 */
+.instructor-item:nth-of-type(odd) {
+  grid-template-columns: 1fr 280px;
+}
+
+.instructor-item:nth-of-type(odd) .instructor-image {
+  order: 2;
+}
+
+/* 写真 */
+.instructor-image {
+  position: relative;
+  width: 100%;
+}
+
+.instructor-image img {
   position: relative;
   z-index: 2;
-}
-
-/* ティッカー */
-.instructor-ticker {
-  position: absolute;
-  top: 50%;
-  left: 0;
   width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  transform: translateY(-50%);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 写真の後ろの色ブロック */
+.image-bg {
+  position: absolute;
   z-index: 1;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  background: #8ea3bf;
+  border-radius: 8px;
+  transition: transform .6s var(--ease);
 }
 
-.instructor-ticker span {
-  display: inline-block;
-  letter-spacing: 0.2em;
-  font-size: 48px;
+.instructor-item:hover .image-bg {
+  transform: translate(6px, 6px);
+}
+
+/* テキスト */
+.instructor-text h3 {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(48, 65, 107, 0.18);
+  font-size: 30px;
   font-weight: 700;
-  color: rgba(74, 74, 74, 0.1);
-  animation: ticker-scroll 32s linear infinite;
+  letter-spacing: 0.12em;
+  color: var(--navy-color);
 }
 
+.role {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 50px;
+  background: var(--navy-color);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.instructor-text p {
+  font-size: 15px;
+  line-height: 2.2;
+  color: var(--main-color);
+}
+
+/* タブレット */
+@media (max-width: 1024px) {
+  .instructor-item,
+  .instructor-item:nth-of-type(odd) {
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    padding: 48px 40px;
+  }
+
+  .instructor-item:nth-of-type(odd) .instructor-image {
+    order: 0;
+  }
+}
+
+/* スマホ */
 @media (max-width: 768px) {
-  .instructor-item {
-    flex-direction: column;
+  .instructor-item,
+  .instructor-item:nth-of-type(odd) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 24px 36px;
     text-align: center;
   }
 
   .instructor-image {
-    width: 180px;
+    width: 200px;
+    margin: 0 auto;
   }
 
   .image-bg {
-    top: -15px;
-    left: -15px;
+    top: 14px;
+    left: 14px;
+  }
+
+  .instructor-text h3 {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 24px;
   }
 }
